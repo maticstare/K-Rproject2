@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fri.sparovcek.SceneController">
+  <padding>
+    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+  </padding>
+    <Label layoutX="225.0" layoutY="47.0" prefHeight="44.0" prefWidth="528.0" text="Prijava v mobilno banko Šparovček">
+      <font>
+         <Font name="Calibri" size="37.0" />
+      </font>
+    </Label>
+   <TextField id="loginUsername" accessibleRole="PASSWORD_FIELD" layoutX="427.0" layoutY="147.0" />
+   <PasswordField id="loginPassword" layoutX="427.0" layoutY="202.0" />
+   <Button id="loginButton" layoutX="477.0" layoutY="250.0" mnemonicParsing="false" onAction="#onLogin" text="Prijava" />
+   <Label layoutX="318.0" layoutY="151.0" prefHeight="17.0" prefWidth="92.0" text="Uporabniško ime" />
+   <Label layoutX="378.0" layoutY="206.0" prefHeight="17.0" prefWidth="32.0" text="Geslo" />
+   <Label id="loginError" contentDisplay="CENTER" layoutX="349.0" layoutY="320.0" prefHeight="26.0" prefWidth="308.0" text="Vnesi pravilno uporabniško ime in geslo!" textAlignment="RIGHT" textFill="RED" visible="false" wrapText="true">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Label>
+</AnchorPane>

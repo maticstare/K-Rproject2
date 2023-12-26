@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fri.sparovcek.SceneController">
+   <Label layoutX="301.0" layoutY="25.0" prefHeight="45.0" prefWidth="427.0" text="Nakazilo na račun znotraj banke" textAlignment="CENTER">
+      <font>
+         <Font size="30.0" />
+      </font>
+   </Label>
+   <TextField fx:id="znesek" disable="true" layoutX="499.0" layoutY="83.0" />
+   <TextField fx:id="iban" disable="true" layoutX="499.0" layoutY="141.0" />
+   <TextField fx:id="osebniZaznamek" disable="true" layoutX="497.0" layoutY="199.0" prefHeight="25.0" prefWidth="149.0" />
+   <Label layoutX="356.0" layoutY="87.0" prefHeight="17.0" prefWidth="143.0" text="Znesek" textAlignment="RIGHT" />
+   <Label layoutX="356.0" layoutY="145.0" prefHeight="17.0" prefWidth="143.0" text="IBAN prejemnika" />
+   <Label layoutX="353.0" layoutY="186.0" prefHeight="51.0" prefWidth="129.0" text="Osebni zaznamek (izpolni le v primeru, da želiš shraniti predlogo)" wrapText="true" />
+   <ComboBox fx:id="izbiraRacuna" disable="true" layoutX="496.0" layoutY="254.0" prefHeight="25.0" prefWidth="149.0">
+      <items>
+         <FXCollections fx:factory="observableArrayList">
+            <String fx:id="racun1" fx:value="Domači račun" />
+            <String fx:id="racun2" fx:value="Službeni račun" />
+            <String fx:id="racun3" fx:value="Neobdavčeni račun" />
+         </FXCollections>
+      </items>
+   </ComboBox>
+   <Button layoutX="403.0" layoutY="306.0" mnemonicParsing="false" onAction="#onConfirmTransfer" text="Plačaj" />
+   <Button layoutX="549.0" layoutY="306.0" mnemonicParsing="false" onAction="#returnToTransferScene" text="Nazaj" />
+   <Label layoutX="353.0" layoutY="258.0" prefHeight="17.0" prefWidth="143.0" text="Izberite svoj račun" />
+   <Label id="confirmTransferMessage" contentDisplay="CENTER" layoutX="416.0" layoutY="348.0" prefHeight="26.0" prefWidth="168.0" text="Želite potrditi prenos?" textAlignment="RIGHT" wrapText="true">
+      <font>
+         <Font size="17.0" />
+      </font>
+   </Label>
+</AnchorPane>

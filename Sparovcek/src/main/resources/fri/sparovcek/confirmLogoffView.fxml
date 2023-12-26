@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fri.sparovcek.SceneController">
+   <Label alignment="CENTER" layoutX="257.0" layoutY="28.0" prefHeight="45.0" prefWidth="487.0" text="Danes ste opravili naslednje storitve:" textAlignment="CENTER">
+      <font>
+         <Font size="30.0" />
+      </font>
+   </Label>
+   <Label id="history" alignment="CENTER" layoutX="356.0" layoutY="85.0" prefHeight="206.0" prefWidth="290.0" textAlignment="CENTER" />
+   <Label alignment="CENTER" layoutX="422.0" layoutY="291.0" text="Želite potrditi odjavo?">
+      <font>
+         <Font size="16.0" />
+      </font>
+   </Label>
+   <Button id="exitButton" layoutX="422.0" layoutY="327.0" mnemonicParsing="false" onAction="#exitApplication" text="Odjava" />
+   <Button id="backToMenuButton" layoutX="532.0" layoutY="327.0" mnemonicParsing="false" onAction="#switchToMenuScene" text="Nazaj" />
+</AnchorPane>
