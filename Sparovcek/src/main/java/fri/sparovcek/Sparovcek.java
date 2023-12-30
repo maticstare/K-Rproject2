@@ -9,7 +9,7 @@ public class Sparovcek extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        SceneController.openLoginScene(stage);
+        fri.sparovcek.SceneController.openLoginScene(stage);
     }
 
     public static void main(String[] args) {

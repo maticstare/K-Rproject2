@@ -343,7 +343,7 @@ public class SceneController {
         nazivPrejemnika.setText(transaction.get(3));
         naslovPrejemnika.setText(transaction.get(4));
         osebniZaznamekField.setText(transaction.get(5));
-        }
+    }
 
     private void displayUpnTemplateError() {
         Label upnTemplateError = (Label) scene.lookup("#upnTemplateError");
