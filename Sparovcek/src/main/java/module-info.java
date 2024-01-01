@@ -1,4 +1,4 @@
-module fri.sparovcek2 {
+module fri.sparovcek {
     requires javafx.controls;
     requires javafx.fxml;
 
