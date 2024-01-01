@@ -30,78 +30,23 @@
 \author{Matic Stare}
 \date{\today}
 
-
-
 \maketitle
-
-% Sections
-\section{Uvod}
-\label{sec:introduction}
-
-Preden začnemo z obravnavo EEG signalov je potrebno odstraniti očesne artefakte, na katere vpliva gibanje oči. V tem članku bomo predstavili postopek analize neodvisnih komponent (ANK), ki je namenjen odstranjevanju očesnih artefaktov iz EEG signalov. Implementirali smo program, ki s pomočjo algoritma FastICA izvede dekompozicijo EEG signala na neodvisne komponente.
-
-
-\section{Metode}
-\label{sec:methodology}
-
-Iz podatkovne baze EEGMMI (ki je dostopna na povezavi \href[]{https://www.physionet.org/content/eegmmidb/1.0.0/}{Physionet}) smo naključno izbrali en subjekt. Ker poskušamo izločiti očesne artefakte, smo izbrali prvo vajo, pri kateri je imel subjekt odprte oči. Program smo implementirali v programskem okolju MATLAB. Za branje EEG signalov, pa smo si pomagali s paketom WFDB. Za izvedbo ANK smo uporabili algoritem FastICA, ki smo ga uporabili tudi na laboratorijskih vajah. Z namenom, da bi vse komponente konvergirale, smo nastavili maksimalno število iteracij na 5000. Program smo testirali na posnetku \textbf{S020R01.edf}.
-
-\section{Rezultati}
-\label{sec:results}
-Na sliki \ref{fig:decomposed} pa so prikazani signali posameznih elektrod. Vidimo lahko, da se komponente med 22 in 38 precej razlikujejo od ostalih. To ni naklučje, saj so to ravno komponente elektrod, ki so pritrjene blizu oči.
-
-Na sliki \ref{fig:original} je prikazan originalni EEG signal. Na sliki \ref{fig:newSigs} so prikazani signali, ki smo jih dobili po odstranitvi komponent, ki so povezane z očesnimi artefakti. Vidimo lahko, da signali nimajo več toliko odstopanj, kot so jih imeli v originalnem signalu.
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{decompSigs.png}
-    \caption{Signali posameznih elektrod.}
-    \label{fig:decomposed}
-\end{figure}
-
-
-
-\begin{figure}[H]
-    \begin{subfigure}{0.49\linewidth}
-        \centering
-        \includegraphics[width=\textwidth]{sigs.png}
-        \caption{Originalni EEG signal.}\label{fig:original}
-    \end{subfigure}
-    \begin{subfigure}{0.49\linewidth}
-        \centering
-        \includegraphics[width=\textwidth]{newSigs.png}
-        \caption{EEG signal z odstranjenimi očesnimi artefakti.}\label{fig:newSigs}
-    \end{subfigure}
-    \caption{Before and after graph}\label{fig:beforeAfter}
-\end{figure}
-
-
-\section{Diskusija}
-\label{sec:discussion}
-
-Vidimo lahko, da je postopek ANK zelo učinkovit pri odstranjevanju očesnih artefaktov, saj je v novem signalu precej manj šuma. Vendar pa je potrebno biti previden pri izbiri komponent, ki jih želimo odstraniti. V našem primeru smo odstranili komponente, ki so bile povezane z očesnimi artefakti. Kot nadalnje delo, bi lahko poskusili odstraniti tudi komponente, ki so povezane z drugimi artefakti.
-
-%Aplikacija za telefonsko banko Sparovček
-
 
 Pri predmetu Komunkacija človek računalnik smo za drugo seminarsko nalogo implementirali aplikacijo za telefonsko banko Sparovček. Pri delu smo skušali slediti desetim Nielsenovim principom. Te služijo kot smernice za dobro uporabniško izkušnjo. V nadaljevanju bomo predstavili, kako smo posamezne principe upoštevali pri naši aplikaciji.
 \begin {itemize}
-    \item \textbf{Prilagodi se realnemu svetu:} Z namenom, da bi se aplikacija čim bolj prilagodila realnemu svektu, je v njej uporabljen čim bolj preprost jezi. To pomeni, da so uporabljene besede, ki jih uporabniki uporabljajo v vsakdanjem življenju. Primer tega je, da je za izpis stanja na računu uporabljena beseda "stanje" in ne "saldo".     
-
+    \item \textbf{Prilagodi se realnemu svetu:} Z namenom, da bi se aplikacija čim bolj prilagodila realnemu svektu, je v njej uporabljen čim bolj preprost jezi. To pomeni, da so uporabljene besede, ki jih uporabniki uporabljajo v vsakdanjem življenju. Primer tega je, da je za izpis stanja na računu uporabljena beseda "stanje" in ne "saldo".
     \item \textbf{Konsistentnost in standardi:} Aplikacija je konsistentna, saj se uporabljajo enake besede za enake funkcije.
-    
-
-    \item \textbf{Pomoč in dokumentacija:} 
-    
-    \item \textbf{Uporabnikov nadzor in svoboda:} 
-    
-    \item \textbf{Vidljivost statusa sistema:} 
+    \item \textbf{Pomoč in dokumentacija:} Uporabniku je na vsakem koraku na voljo poleg intuitivnega vmesnika tudi pomoč. Ta je dosegljiva v zgornjem levem kotu z gumbom Pomoč.
+    \item \textbf{Uporabnikov nadzor in svoboda:} Aplikacija uporabniku omogoča, da pred izvedbo plačila preveri, če so vsi podatki pravilno vnešeni. Če uporabnik ugotovi, da je prišlo do napake, lahko prekine postopek plačila in svojo napako popravi.
+    \item \textbf{Vidljivost statusa sistema:} Uporabnik je skozi celotno uporabo aplikacije obveščen o tem, kaj se dogaja. Na zaslonu se mu izpisujejo obvestila o tem, kaj je potrebno storiti, da bo lahko uspešno opravil željeno storitev.
     \item \textbf{Fleksibilnost in učinkovitost:} Da bi uporabniku olajšali uporabniško izkušnjo, smo mu omogočili, da shrani predloge plačila UPN nalogov ter internih bančnih transferjev. To mu omogoči, da če želi še kdaj v prihodnosti opraviti podobno storitev, mi ni potrebno znova vnašati podatke o plačilu.
     \item \textbf{Izogibanje napakam:} Da bi se izognili čim večjemu številu napak pri uporabniškem vnosu, smo poskusili čim večje število vnosnih polj nadomestiti s spustnimi seznami.
     \item \textbf{Raje prepoznaj kot si zapomni:} Z namenom, da bi zadostili temu načelu, smo poskušali vse tekstovno vnosne komponente, ki so imele možnost manjšega števila različnih vnosov, nadomestiti s spustnimi seznami, ki so uporabniki bolj prijazna.
     \item \textbf{Javljanje napak, diagnoza, reševanje:} Aplikacija javlja napake, kjer je to potrebno. Uporabnik ima potem možnost svojo napako popraviti tako, da pravilno vnese zahtevane vnose. Obvestilo o napaki mu poda napotek o tem, kaj mora uporabnik popraviti. To stori na tak način, da obvestilo poda v naravnem jeziku in ne tehničnem.
     \item \textbf{Minimalistično in estetsko načrtovanje:} Pri načrtovanju aplikacije smo poskušali uporabiti minimalni dizajn kar pomeni, da smo vnesli le elemente, ki so nujno potrebni za delovanje aplikacije in vse ostale, kot so na primer obvestila o napakah.
 \end{itemize}
+
+Poleg upoštevanja Nielsenovih principov smo pri načrtovanju aplikacije upoštevali tudi podan pogovor z uporabnikom. Iz njega smo izvedeli, kakšne so njegove želje in potrebe. Na podlagi tega smo nato oblikovali aplikacijo, ki je uporabniku prijazna in mu omogoča, da hitro in enostavno opravi željeno storitev. Posamezne gradnike aplikacije smo izbirali na podlagi Nielsenovega principa "Izogibanje napakam". To pomeni, da smo se poskušali izogniti tistim, ki bi lahko uporabniku povzročili napake pri vnosu. Vse komponente smo postavili na sredino zaslona, da so bile uporabniku čim bolj dostopne.
+
 
 \end{document}
